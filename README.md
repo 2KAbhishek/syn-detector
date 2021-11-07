@@ -23,7 +23,7 @@
 <a href="https://github.com/2KAbhishek?tab=followers">
 <img alt="Followers" src="https://img.shields.io/github/followers/2kabhishek?color=222&style=plastic&label=Followers"> </a>
 
-<h3>Short sweet headline with 🎇🎉</h3>
+<h3>Analyzes network to detect possible SYN scans 🕵️🔎</h3>
 
 <figure>
   <img src= "https://raw.githubusercontent.com/2KAbhishek/SYN-detector/main/images/screenshot.png" alt="SYN-detector Demo" style="width:100%">
@@ -35,17 +35,23 @@
 
 ## What is this
 
-SYN-detector is a `<utility/tool/feature>` that allows `<insert_target_audience>` to do `<action/task_it_does>`.
+SYN-detector is a tool that analyzes a PCAP file in order to detect possible SYN scans.
 
 ## Inspiration
 
-SYN-detector was inspired by `<reason/idea>`.
+Was reading up on newtwork security and found about a technique called SYN scan and learned these:
+
+- Used to find open ports for attack
+- Scanenr sends out TCP SYN packets (the first packet in the TCP handshake) and watches for hosts that respond with SYN+ACK packets (the second handshake step)
+- Number of SYN packets is much higher than the number of SYN+ACK packets
+
+Wanted to build a tool to detect possible SYN scans.
 
 ## Prerequisites
 
 Before you begin, ensure you have met the following requirements:
 
-- You have installed the latest version of `<coding_language/dependency/requirement_1>`
+- You have installed the latest version of `python, scapy`
 
 ## Getting SYN-detector
 
@@ -54,51 +60,38 @@ To install SYN-detector, follow these steps:
 ```bash
 git clone https://github.com/2kabhishek/SYN-detector
 cd SYN-detector
-<install_command>
 ```
 
 ## Using SYN-detector
 
+You'll need to have a PCAP file to analyze.
+
+I have a PCAP file `test-data.pcap` that I used to test SYN-detector.
+
 ```bash
 USAGE:
-    command [FLAGS] [OPTIONS]
-
-FLAGS:
-    -h, --help              Prints help information.
-
-OPTIONS:
-    -o, --option <value>    Option description.
-    Options are: a, b. [default: a]
-
-Example:
-
+    python syn-detector.py ./test-data.pcap
 
 ```
 
 ## How it was built
 
-SYN-detector was built using `<tech/library>`
+SYN-detector was built using `scapy`
 
 ## Challenges faced
 
-While building SYN-detector the main challenges were `<issue/difficulty>`
+While building SYN-detector the main challenges were:
+
+- Figuring out TCP flags
 
 ## What I learned
 
-While building SYN-detector I `<learned/accomplished>` about `<learning/accomplishment>`
+- Learned a lot about network security
+- Hands on with scapy
 
 ## What's next
 
-Planning to add `<feature/module>`.
-
-### To-Do
-
-- [x] Setup repo
-- [ ] Think real hard
-- [ ] Start typing
-- [ ] Change me
-- [ ] Update README
-- [ ] Finish it
+Will make few more scripts using `scapy`.
 
 Hit the ⭐ button if you found this useful.
 
