@@ -42,7 +42,7 @@ SYN-detector is a tool that analyzes a PCAP file in order to detect possible SYN
 Was reading up on newtwork security and found about a technique called SYN scan and learned these:
 
 - Used to find open ports for attack
-- Scanenr sends out TCP SYN packets (the first packet in the TCP handshake) and watches for hosts that respond with SYN+ACK packets (the second handshake step)
+- Scanner sends out TCP SYN packets (the first packet in the TCP handshake) and watches for hosts that respond with SYN+ACK packets (the second handshake step)
 - Number of SYN packets is much higher than the number of SYN+ACK packets
 
 Wanted to build a tool to detect possible SYN scans.
