@@ -5,6 +5,15 @@ import sys
 from collections import Counter
 
 
+def get_scanned_ports(pcap_fname, ip):
+    portsScanned = []
+    for pkt in PcapReader(pcap_fname):
+        if pkt.haslayer(IP):
+            if pkt.getlayer(IP).src == ip:
+                portsScanned.append(pkt.getlayer(TCP).sport)
+    return list(set(portsScanned))
+
+
 def main(pcap_fname):
     syn_ip_list = []
     syn_ack_ip_list = []
@@ -21,7 +30,8 @@ def main(pcap_fname):
 
     for ip in syn_counts:
         if syn_counts[ip] > 3 * syn_ack_counts[ip]:
-            print(ip)
+            print("Port scan conducted by IP:\n{}\nScanned ports:\n{}\n".format(
+                ip, ", ".join(str(x) for x in get_scanned_ports(pcap_fname, ip))))
 
 
 if __name__ == '__main__':
