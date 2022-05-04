@@ -1,3 +1,5 @@
+#!/usr/bin/env python3
+
 from scapy.all import *
 import sys
 from collections import Counter
